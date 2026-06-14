@@ -14,16 +14,16 @@
 
   /* ---------- Mobile nav ---------- */
   const navToggle = document.querySelector('.nav-toggle');
-  const navMenu = document.querySelector('nav ul');
-  if (navToggle && navMenu) {
+  const navEl = document.querySelector('nav');
+  if (navToggle && navEl) {
     navToggle.addEventListener('click', () => {
-      const open = navMenu.classList.toggle('open');
+      const open = navEl.classList.toggle('open');
       navToggle.classList.toggle('open', open);
       navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
-    navMenu.querySelectorAll('a').forEach((a) => {
+    navEl.querySelectorAll('ul a').forEach((a) => {
       a.addEventListener('click', () => {
-        navMenu.classList.remove('open');
+        navEl.classList.remove('open');
         navToggle.classList.remove('open');
       });
     });
