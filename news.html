@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News — Hide and Seeds</title>
+  <meta name="description" content="Latest news and updates from Hide and Seeds — releases, awards, studio updates and behind-the-scenes.">
+  <meta name="theme-color" content="#05060f">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <filter id="ink-edge" x="-25%" y="-25%" width="150%" height="150%" color-interpolation-filters="sRGB">
+        <feTurbulence type="fractalNoise" baseFrequency="0.014 0.019" numOctaves="4" seed="7" result="n"/>
+        <feDisplacementMap in="SourceAlpha" in2="n" scale="42" xChannelSelector="R" yChannelSelector="G" result="ra"/>
+        <feComposite in="SourceGraphic" in2="ra" operator="in"/>
+      </filter>
+      <filter id="ink-edge-soft" x="-25%" y="-25%" width="150%" height="150%" color-interpolation-filters="sRGB">
+        <feTurbulence type="fractalNoise" baseFrequency="0.011 0.016" numOctaves="4" seed="3" result="n"/>
+        <feDisplacementMap in="SourceAlpha" in2="n" scale="30" xChannelSelector="R" yChannelSelector="G" result="ra"/>
+        <feComposite in="SourceGraphic" in2="ra" operator="in"/>
+      </filter>
+      <filter id="liquid-warp" x="-50%" y="-50%" width="200%" height="200%" color-interpolation-filters="sRGB">
+        <feTurbulence type="fractalNoise" baseFrequency="0.006 0.009" numOctaves="3" seed="5" result="n1">
+          <animate attributeName="baseFrequency" dur="12s" values="0.006 0.009; 0.010 0.006; 0.006 0.009" repeatCount="indefinite"/>
+        </feTurbulence>
+        <feDisplacementMap in="SourceGraphic" in2="n1" scale="22" xChannelSelector="R" yChannelSelector="G" result="d1"/>
+        <feTurbulence type="fractalNoise" baseFrequency="0.018 0.022" numOctaves="2" seed="11" result="n2"/>
+        <feDisplacementMap in="d1" in2="n2" scale="8" xChannelSelector="G" yChannelSelector="B"/>
+      </filter>
+    </defs>
+  </svg>
+
+  <canvas id="shader-canvas"></canvas>
+  <div id="ring-cursor" aria-hidden="true"><span class="rc-ring"></span><span class="rc-mark"></span><span class="rc-label"></span></div>
+
+  <div class="content-wrapper">
+    <nav>
+      <a href="index.html" class="logo">Hide &amp; Seeds</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="news.html" class="active">News</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <header class="page-hero">
+      <span class="eyebrow">Latest</span>
+      <h1>News &amp; Updates</h1>
+      <p>Releases, awards, studio milestones and the occasional behind-the-scenes peek. Here's what's growing at Hide and Seeds.</p>
+    </header>
+
+    <section class="page-section">
+      <div class="container">
+        <div class="news-grid">
+
+          <article class="news-card reveal">
+            <div class="news-thumb">
+              <video autoplay muted loop playsinline><source src="uploads/Services_Cinematic.mp4" type="video/mp4"></video>
+              <span class="cat">Award</span>
+            </div>
+            <div class="news-body">
+              <div class="date">2024</div>
+              <h3>"Biji" earns award recognition</h3>
+              <p>Our original short film "Biji" was honoured for its character animation and storytelling — a proud milestone for the whole studio.</p>
+              <a class="read-more" href="projects.html" data-cursor="READ">Read more →</a>
+            </div>
+          </article>
+
+          <article class="news-card reveal reveal-d1">
+            <div class="news-thumb">
+              <video autoplay muted loop playsinline><source src="uploads/Services_GameArt.mp4" type="video/mp4"></video>
+              <span class="cat">Release</span>
+            </div>
+            <div class="news-body">
+              <div class="date">2024</div>
+              <h3>Biji Buddy Bash takes shape</h3>
+              <p>The Biji universe steps into interactive territory with stylised characters and game-ready assets built for play.</p>
+              <a class="read-more" href="projects.html" data-cursor="READ">Read more →</a>
+            </div>
+          </article>
+
+          <article class="news-card reveal reveal-d2">
+            <div class="news-thumb">
+              <video autoplay muted loop playsinline><source src="uploads/HnS_Demoreel_2025_Website.mp4" type="video/mp4"></video>
+              <span class="cat">Studio</span>
+            </div>
+            <div class="news-body">
+              <div class="date">2025</div>
+              <h3>Our 2025 showreel is live</h3>
+              <p>Hide and Seeds 2.2 — a fresh cut through our latest commercials, cinematics and CG craft. Press play.</p>
+              <a class="read-more" href="projects.html" data-cursor="READ">Read more →</a>
+            </div>
+          </article>
+
+          <article class="news-card reveal">
+            <div class="news-thumb">
+              <img src="assets/studio-01.png" alt="Studio space" loading="lazy">
+              <span class="cat">Studio</span>
+            </div>
+            <div class="news-body">
+              <div class="date">2025</div>
+              <h3>The studio keeps growing</h3>
+              <p>New space, new gear and new seats to fill. A behind-the-scenes look at how we're building for the next chapter.</p>
+              <a class="read-more" href="team.html" data-cursor="READ">Read more →</a>
+            </div>
+          </article>
+
+          <article class="news-card reveal reveal-d1">
+            <div class="news-thumb">
+              <video autoplay muted loop playsinline><source src="uploads/Services_Commercial.mp4" type="video/mp4"></video>
+              <span class="cat">Work</span>
+            </div>
+            <div class="news-body">
+              <div class="date">2025</div>
+              <h3>New commercial work shipped</h3>
+              <p>A run of brand campaigns delivered end-to-end — from concept and CG through to final grade.</p>
+              <a class="read-more" href="projects.html" data-cursor="READ">Read more →</a>
+            </div>
+          </article>
+
+          <article class="news-card reveal reveal-d2">
+            <div class="news-thumb">
+              <img src="assets/studio-02.png" alt="Studio team space" loading="lazy">
+              <span class="cat">Careers</span>
+            </div>
+            <div class="news-body">
+              <div class="date">2025</div>
+              <h3>We're hiring across the board</h3>
+              <p>Animators, VFX artists and more — we're opening seats for people who want to grow their craft with us.</p>
+              <a class="read-more" href="careers.html" data-cursor="READ">Read more →</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <div class="inline-cta">
+        <h2>Stay in the loop.</h2>
+        <p>Follow along for releases, behind-the-scenes and studio news.</p>
+        <a href="https://youtube.com/channel/UCpOwu_qczLWLpKOR0KmR1_w" target="_blank" rel="noopener" class="cta-button" data-cursor="WATCH">Watch on YouTube</a>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Studio</h3>
+          <p>Hide and Seeds Production is an award-winning CG studio creating cinematic experiences that blend creativity with technology.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <div class="footer-links">
+            <a href="projects.html">Projects</a>
+            <a href="services.html">Services</a>
+            <a href="team.html">Team</a>
+            <a href="careers.html">Careers</a>
+            <a href="news.html">News</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>Contact</h3>
+          <p>Email: <a href="mailto:hello@hideandseeds.com" style="color:#FFD700;text-decoration:none;">hello@hideandseeds.com</a></p>
+          <p>Bandar Puteri Puchong, 47100 Puchong, Selangor, Malaysia</p>
+          <div class="footer-links" style="margin-top: 15px;">
+            <a href="https://facebook.com/hideandseeds" target="_blank" rel="noopener">Facebook</a>
+            <a href="https://linkedin.com/company/hide-and-seeds/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://youtube.com/channel/UCpOwu_qczLWLpKOR0KmR1_w" target="_blank" rel="noopener">YouTube</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Hide and Seeds Production. All Rights Reserved.</p>
+        <p>Crafted with creativity &amp; technology</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

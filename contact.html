@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Hide and Seeds</title>
+  <meta name="description" content="Get in touch with Hide and Seeds — award-winning CG studio in Bandar Puteri Puchong, Selangor, Malaysia. hello@hideandseeds.com">
+  <meta name="theme-color" content="#05060f">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <filter id="ink-edge" x="-25%" y="-25%" width="150%" height="150%" color-interpolation-filters="sRGB">
+        <feTurbulence type="fractalNoise" baseFrequency="0.014 0.019" numOctaves="4" seed="7" result="n"/>
+        <feDisplacementMap in="SourceAlpha" in2="n" scale="42" xChannelSelector="R" yChannelSelector="G" result="ra"/>
+        <feComposite in="SourceGraphic" in2="ra" operator="in"/>
+      </filter>
+      <filter id="ink-edge-soft" x="-25%" y="-25%" width="150%" height="150%" color-interpolation-filters="sRGB">
+        <feTurbulence type="fractalNoise" baseFrequency="0.011 0.016" numOctaves="4" seed="3" result="n"/>
+        <feDisplacementMap in="SourceAlpha" in2="n" scale="30" xChannelSelector="R" yChannelSelector="G" result="ra"/>
+        <feComposite in="SourceGraphic" in2="ra" operator="in"/>
+      </filter>
+      <filter id="liquid-warp" x="-50%" y="-50%" width="200%" height="200%" color-interpolation-filters="sRGB">
+        <feTurbulence type="fractalNoise" baseFrequency="0.006 0.009" numOctaves="3" seed="5" result="n1">
+          <animate attributeName="baseFrequency" dur="12s" values="0.006 0.009; 0.010 0.006; 0.006 0.009" repeatCount="indefinite"/>
+        </feTurbulence>
+        <feDisplacementMap in="SourceGraphic" in2="n1" scale="22" xChannelSelector="R" yChannelSelector="G" result="d1"/>
+        <feTurbulence type="fractalNoise" baseFrequency="0.018 0.022" numOctaves="2" seed="11" result="n2"/>
+        <feDisplacementMap in="d1" in2="n2" scale="8" xChannelSelector="G" yChannelSelector="B"/>
+      </filter>
+    </defs>
+  </svg>
+
+  <canvas id="shader-canvas"></canvas>
+  <div id="ring-cursor" aria-hidden="true"><span class="rc-ring"></span><span class="rc-mark"></span><span class="rc-label"></span></div>
+
+  <div class="content-wrapper">
+    <nav>
+      <a href="index.html" class="logo">Hide &amp; Seeds</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+
+    <header class="page-hero">
+      <span class="eyebrow">Say Hello</span>
+      <h1>Let's Make Something</h1>
+      <p>Have a project, a question, or just want to talk shop? We'd love to hear from you.</p>
+    </header>
+
+    <section class="page-section">
+      <div class="contact-grid">
+        <div class="contact-info reveal reveal-left">
+          <h2>Blend creativity with technology — with us.</h2>
+          <p class="lead">Tell us about your project and we'll get back to you. Whether it's a commercial, a cinematic, game art or something we haven't dreamed up yet, let's grow it together.</p>
+
+          <div class="contact-detail">
+            <div class="k">Email</div>
+            <div class="v"><a href="mailto:hello@hideandseeds.com">hello@hideandseeds.com</a></div>
+          </div>
+          <div class="contact-detail">
+            <div class="k">Studio</div>
+            <div class="v">Bandar Puteri Puchong,<br>47100 Puchong, Selangor, Malaysia</div>
+          </div>
+          <div class="contact-detail">
+            <div class="k">Follow</div>
+            <div class="v footer-links" style="gap:18px;">
+              <a href="https://facebook.com/hideandseeds" target="_blank" rel="noopener">Facebook</a>
+              <a href="https://linkedin.com/company/hide-and-seeds/" target="_blank" rel="noopener">LinkedIn</a>
+              <a href="https://youtube.com/channel/UCpOwu_qczLWLpKOR0KmR1_w" target="_blank" rel="noopener">YouTube</a>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form reveal reveal-right" id="contact-form" novalidate>
+          <div class="form-field">
+            <label for="cf-name">Name</label>
+            <input type="text" id="cf-name" name="name" placeholder="Your name" required>
+          </div>
+          <div class="form-field">
+            <label for="cf-email">Email</label>
+            <input type="email" id="cf-email" name="email" placeholder="you@email.com" required>
+          </div>
+          <div class="form-field">
+            <label for="cf-type">Project type</label>
+            <select id="cf-type" name="type">
+              <option>Commercial Production</option>
+              <option>3D Animation</option>
+              <option>Visual Effects</option>
+              <option>Motion Design</option>
+              <option>Game Art</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="cf-message">Message</label>
+            <textarea id="cf-message" name="message" placeholder="Tell us about your project..." required></textarea>
+          </div>
+          <button type="submit" class="cta-button" style="width:100%;" data-cursor="SEND">Send Message</button>
+          <p class="form-note">This opens your email app with the message ready to send to hello@hideandseeds.com.</p>
+          <div class="form-status" id="cf-status" role="status"></div>
+        </form>
+      </div>
+
+      <div class="map-embed reveal">
+        <iframe
+          title="Hide and Seeds studio location"
+          src="https://www.google.com/maps?q=Bandar%20Puteri%20Puchong%2C%2047100%20Puchong%2C%20Selangor%2C%20Malaysia&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Studio</h3>
+          <p>Hide and Seeds Production is an award-winning CG studio creating cinematic experiences that blend creativity with technology.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <div class="footer-links">
+            <a href="projects.html">Projects</a>
+            <a href="services.html">Services</a>
+            <a href="team.html">Team</a>
+            <a href="careers.html">Careers</a>
+            <a href="news.html">News</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>Contact</h3>
+          <p>Email: <a href="mailto:hello@hideandseeds.com" style="color:#FFD700;text-decoration:none;">hello@hideandseeds.com</a></p>
+          <p>Bandar Puteri Puchong, 47100 Puchong, Selangor, Malaysia</p>
+          <div class="footer-links" style="margin-top: 15px;">
+            <a href="https://facebook.com/hideandseeds" target="_blank" rel="noopener">Facebook</a>
+            <a href="https://linkedin.com/company/hide-and-seeds/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://youtube.com/channel/UCpOwu_qczLWLpKOR0KmR1_w" target="_blank" rel="noopener">YouTube</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Hide and Seeds Production. All Rights Reserved.</p>
+        <p>Crafted with creativity &amp; technology</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/main.js" defer></script>
+  <script>
+    (function () {
+      var form = document.getElementById('contact-form');
+      if (!form) return;
+      var status = document.getElementById('cf-status');
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var name = form.name.value.trim();
+        var email = form.email.value.trim();
+        var type = form.type.value;
+        var message = form.message.value.trim();
+        if (!name || !email || !message) {
+          status.textContent = 'Please fill in your name, email and message.';
+          status.className = 'form-status show err';
+          return;
+        }
+        var subject = 'Project enquiry — ' + type + ' (' + name + ')';
+        var body = 'Name: ' + name + '\nEmail: ' + email + '\nProject type: ' + type + '\n\n' + message;
+        var href = 'mailto:hello@hideandseeds.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+        window.location.href = href;
+        status.textContent = 'Opening your email app… if nothing happens, email us directly at hello@hideandseeds.com.';
+        status.className = 'form-status show ok';
+      });
+    })();
+  </script>
+</body>
+</html>

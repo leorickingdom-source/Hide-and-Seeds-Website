@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services — Hide and Seeds</title>
+  <meta name="description" content="Commercial production, 3D animation, visual effects, motion design, post-production and creative consultation from Hide and Seeds.">
+  <meta name="theme-color" content="#05060f">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <filter id="ink-edge" x="-25%" y="-25%" width="150%" height="150%" color-interpolation-filters="sRGB">
+        <feTurbulence type="fractalNoise" baseFrequency="0.014 0.019" numOctaves="4" seed="7" result="n"/>
+        <feDisplacementMap in="SourceAlpha" in2="n" scale="42" xChannelSelector="R" yChannelSelector="G" result="ra"/>
+        <feComposite in="SourceGraphic" in2="ra" operator="in"/>
+      </filter>
+      <filter id="ink-edge-soft" x="-25%" y="-25%" width="150%" height="150%" color-interpolation-filters="sRGB">
+        <feTurbulence type="fractalNoise" baseFrequency="0.011 0.016" numOctaves="4" seed="3" result="n"/>
+        <feDisplacementMap in="SourceAlpha" in2="n" scale="30" xChannelSelector="R" yChannelSelector="G" result="ra"/>
+        <feComposite in="SourceGraphic" in2="ra" operator="in"/>
+      </filter>
+      <filter id="liquid-warp" x="-50%" y="-50%" width="200%" height="200%" color-interpolation-filters="sRGB">
+        <feTurbulence type="fractalNoise" baseFrequency="0.006 0.009" numOctaves="3" seed="5" result="n1">
+          <animate attributeName="baseFrequency" dur="12s" values="0.006 0.009; 0.010 0.006; 0.006 0.009" repeatCount="indefinite"/>
+        </feTurbulence>
+        <feDisplacementMap in="SourceGraphic" in2="n1" scale="22" xChannelSelector="R" yChannelSelector="G" result="d1"/>
+        <feTurbulence type="fractalNoise" baseFrequency="0.018 0.022" numOctaves="2" seed="11" result="n2"/>
+        <feDisplacementMap in="d1" in2="n2" scale="8" xChannelSelector="G" yChannelSelector="B"/>
+      </filter>
+    </defs>
+  </svg>
+
+  <canvas id="shader-canvas"></canvas>
+  <div id="ring-cursor" aria-hidden="true"><span class="rc-ring"></span><span class="rc-mark"></span><span class="rc-label"></span></div>
+
+  <div class="content-wrapper">
+    <nav>
+      <a href="index.html" class="logo">Hide &amp; Seeds</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <header class="page-hero">
+      <span class="eyebrow">What We Do</span>
+      <h1>Services</h1>
+      <p>End-to-end CG production under one roof. From the first spark of an idea to the final graded frame, we blend creativity with technology at every step.</p>
+    </header>
+
+    <section class="page-section">
+      <div class="container">
+        <div class="service-detail-grid">
+          <div class="service-detail reveal">
+            <div class="num">01</div>
+            <h3>Commercial Production</h3>
+            <p>Full-service commercial production from concept to final delivery — built to drive brand engagement.</p>
+            <ul>
+              <li>Concept &amp; creative direction</li>
+              <li>CG &amp; live-action integration</li>
+              <li>End-to-end delivery</li>
+            </ul>
+          </div>
+          <div class="service-detail reveal reveal-d1">
+            <div class="num">02</div>
+            <h3>3D Animation</h3>
+            <p>Character animation, motion graphics and 3D modeling that bring stories to life with technical excellence.</p>
+            <ul>
+              <li>Character &amp; creature animation</li>
+              <li>Modeling, rigging &amp; lookdev</li>
+              <li>Stylised &amp; realistic pipelines</li>
+            </ul>
+          </div>
+          <div class="service-detail reveal reveal-d2">
+            <div class="num">03</div>
+            <h3>Visual Effects</h3>
+            <p>Cutting-edge VFX that seamlessly integrate practical and digital elements for stunning, believable results.</p>
+            <ul>
+              <li>Compositing &amp; integration</li>
+              <li>Simulation &amp; FX</li>
+              <li>Matte painting &amp; environments</li>
+            </ul>
+          </div>
+          <div class="service-detail reveal">
+            <div class="num">04</div>
+            <h3>Motion Design</h3>
+            <p>Dynamic motion graphics and titles that elevate your visual storytelling with precision and creativity.</p>
+            <ul>
+              <li>Title &amp; broadcast design</li>
+              <li>Explainers &amp; product reveals</li>
+              <li>Brand motion systems</li>
+            </ul>
+          </div>
+          <div class="service-detail reveal reveal-d1">
+            <div class="num">05</div>
+            <h3>Post-Production</h3>
+            <p>Comprehensive post services including color grading, sound design and mastering for broadcast quality.</p>
+            <ul>
+              <li>Editorial &amp; finishing</li>
+              <li>Color grading</li>
+              <li>Sound design &amp; mix</li>
+            </ul>
+          </div>
+          <div class="service-detail reveal reveal-d2">
+            <div class="num">06</div>
+            <h3>Creative Consultation</h3>
+            <p>Strategic creative direction from ideation through execution, ensuring your vision is perfectly realized.</p>
+            <ul>
+              <li>Art direction</li>
+              <li>Pre-visualisation</li>
+              <li>Production planning</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>How We Work</h2>
+          <p>A clear, collaborative process that keeps your vision at the centre from seed to screen.</p>
+        </div>
+        <div class="process-grid">
+          <div class="process-step reveal"><div class="step-num">01</div><h4>Discover</h4><p>We dig into your goals, audience and story to find the core idea worth growing.</p></div>
+          <div class="process-step reveal reveal-d1"><div class="step-num">02</div><h4>Design</h4><p>Concepts, styleframes and pre-vis turn the idea into a clear creative direction.</p></div>
+          <div class="process-step reveal reveal-d2"><div class="step-num">03</div><h4>Produce</h4><p>Our CG pipeline brings it to life — modeling, animation, FX and lighting.</p></div>
+          <div class="process-step reveal reveal-d3"><div class="step-num">04</div><h4>Deliver</h4><p>Grading, sound and finishing — polished and mastered for every screen.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section">
+      <div class="container">
+        <div class="stats-strip">
+          <div class="stat reveal"><div class="num">10+</div><div class="label">Years of Craft</div></div>
+          <div class="stat reveal reveal-d1"><div class="num">200+</div><div class="label">Projects Delivered</div></div>
+          <div class="stat reveal reveal-d2"><div class="num">17</div><div class="label">Trusted Clients</div></div>
+          <div class="stat reveal reveal-d3"><div class="num">5★</div><div class="label">Award-Winning</div></div>
+        </div>
+      </div>
+
+      <div class="inline-cta">
+        <h2>Let's build it together.</h2>
+        <p>Tell us what you're making — we'll bring the craft, the pipeline and the people.</p>
+        <a href="contact.html" class="cta-button" data-cursor="SAY HI">Get in Touch</a>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Studio</h3>
+          <p>Hide and Seeds Production is an award-winning CG studio creating cinematic experiences that blend creativity with technology.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <div class="footer-links">
+            <a href="projects.html">Projects</a>
+            <a href="services.html">Services</a>
+            <a href="team.html">Team</a>
+            <a href="careers.html">Careers</a>
+            <a href="news.html">News</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>Contact</h3>
+          <p>Email: <a href="mailto:hello@hideandseeds.com" style="color:#FFD700;text-decoration:none;">hello@hideandseeds.com</a></p>
+          <p>Bandar Puteri Puchong, 47100 Puchong, Selangor, Malaysia</p>
+          <div class="footer-links" style="margin-top: 15px;">
+            <a href="https://facebook.com/hideandseeds" target="_blank" rel="noopener">Facebook</a>
+            <a href="https://linkedin.com/company/hide-and-seeds/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://youtube.com/channel/UCpOwu_qczLWLpKOR0KmR1_w" target="_blank" rel="noopener">YouTube</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Hide and Seeds Production. All Rights Reserved.</p>
+        <p>Crafted with creativity &amp; technology</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

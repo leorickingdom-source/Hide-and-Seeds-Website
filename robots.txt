@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hideandseeds.com/sitemap.xml

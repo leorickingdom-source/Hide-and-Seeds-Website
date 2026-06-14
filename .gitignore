@@ -1,0 +1,16 @@
+# OS
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# Tooling
+.claude/
+.vercel/
+
+# Local design source (kept outside the repo)
+extracted/
+hns-design-source/
+*.zip
+
+# Node (not used here, just in case)
+node_modules/

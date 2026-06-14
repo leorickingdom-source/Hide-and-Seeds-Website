@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects — Hide and Seeds</title>
+  <meta name="description" content="Selected work from Hide and Seeds — award-winning short films, commercials, cinematic VFX and game art.">
+  <meta name="theme-color" content="#05060f">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <filter id="ink-edge" x="-25%" y="-25%" width="150%" height="150%" color-interpolation-filters="sRGB">
+        <feTurbulence type="fractalNoise" baseFrequency="0.014 0.019" numOctaves="4" seed="7" result="n"/>
+        <feDisplacementMap in="SourceAlpha" in2="n" scale="42" xChannelSelector="R" yChannelSelector="G" result="ra"/>
+        <feComposite in="SourceGraphic" in2="ra" operator="in"/>
+      </filter>
+      <filter id="ink-edge-soft" x="-25%" y="-25%" width="150%" height="150%" color-interpolation-filters="sRGB">
+        <feTurbulence type="fractalNoise" baseFrequency="0.011 0.016" numOctaves="4" seed="3" result="n"/>
+        <feDisplacementMap in="SourceAlpha" in2="n" scale="30" xChannelSelector="R" yChannelSelector="G" result="ra"/>
+        <feComposite in="SourceGraphic" in2="ra" operator="in"/>
+      </filter>
+      <filter id="liquid-warp" x="-50%" y="-50%" width="200%" height="200%" color-interpolation-filters="sRGB">
+        <feTurbulence type="fractalNoise" baseFrequency="0.006 0.009" numOctaves="3" seed="5" result="n1">
+          <animate attributeName="baseFrequency" dur="12s" values="0.006 0.009; 0.010 0.006; 0.006 0.009" repeatCount="indefinite"/>
+        </feTurbulence>
+        <feDisplacementMap in="SourceGraphic" in2="n1" scale="22" xChannelSelector="R" yChannelSelector="G" result="d1"/>
+        <feTurbulence type="fractalNoise" baseFrequency="0.018 0.022" numOctaves="2" seed="11" result="n2"/>
+        <feDisplacementMap in="d1" in2="n2" scale="8" xChannelSelector="G" yChannelSelector="B"/>
+      </filter>
+    </defs>
+  </svg>
+
+  <canvas id="shader-canvas"></canvas>
+  <div id="ring-cursor" aria-hidden="true"><span class="rc-ring"></span><span class="rc-mark"></span><span class="rc-label"></span></div>
+
+  <div class="content-wrapper">
+    <nav>
+      <a href="index.html" class="logo">Hide &amp; Seeds</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <header class="page-hero">
+      <span class="eyebrow">Selected Work</span>
+      <h1>Projects We've Grown</h1>
+      <p>Every project starts as a seed. From award-winning short films to high-impact commercials and interactive worlds — here is a selection of the stories we've brought to life.</p>
+    </header>
+
+    <section class="page-section">
+      <div class="work-list">
+
+        <article class="work-row reveal">
+          <div class="work-media">
+            <video autoplay muted loop playsinline>
+              <source src="uploads/Services_Cinematic.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="work-info">
+            <div class="tag-row"><span class="pill">Animation</span><span class="pill">Short Film</span></div>
+            <h3>Biji</h3>
+            <p>Our award-winning original short film — a heartfelt story of growth told through richly crafted character animation and lighting. The flagship seed that defines who we are as a studio.</p>
+            <p class="meta">Award-Winning Short Film · 2024</p>
+          </div>
+        </article>
+
+        <article class="work-row reveal">
+          <div class="work-media">
+            <video autoplay muted loop playsinline>
+              <source src="uploads/Services_GameArt.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="work-info">
+            <div class="tag-row"><span class="pill">Game Art</span><span class="pill">3D</span></div>
+            <h3>Biji Buddy Bash</h3>
+            <p>An interactive spin-off bringing the Biji universe into play. Stylised characters, expressive rigs and game-ready assets built for a vibrant, fast-paced experience.</p>
+            <p class="meta">Game Art &amp; Character Design · 2024</p>
+          </div>
+        </article>
+
+        <article class="work-row reveal">
+          <div class="work-media">
+            <video autoplay muted loop playsinline>
+              <source src="uploads/HnS_Demoreel_2025_Website.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="work-info">
+            <div class="tag-row"><span class="pill">Showreel</span><span class="pill">CG</span></div>
+            <h3>Hide and Seeds 2.2</h3>
+            <p>Our 2025 studio showreel — a fast cut through commercials, cinematics and CG craft from across the team. The clearest look at the range of work we love to make.</p>
+            <p class="meta">Studio Demo Reel · 2025</p>
+          </div>
+        </article>
+
+        <article class="work-row reveal">
+          <div class="work-media">
+            <video autoplay muted loop playsinline>
+              <source src="uploads/Services_Commercial.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="work-info">
+            <div class="tag-row"><span class="pill">Commercial</span><span class="pill">CG</span></div>
+            <h3>Commercial Campaigns</h3>
+            <p>Full-service commercial production from concept to final delivery. Compelling visual narratives engineered to drive brand engagement and stop the scroll.</p>
+            <p class="meta">Brand &amp; Advertising</p>
+          </div>
+        </article>
+
+        <article class="work-row reveal">
+          <div class="work-media">
+            <video autoplay muted loop playsinline>
+              <source src="uploads/Services_Cinematic.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="work-info">
+            <div class="tag-row"><span class="pill">VFX</span><span class="pill">Cinematic</span></div>
+            <h3>Cinematic &amp; VFX</h3>
+            <p>High-impact visual effects for film and television. Seamless integration of practical and digital elements that hold up frame by frame on the big screen.</p>
+            <p class="meta">Film &amp; Television</p>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="inline-cta">
+        <h2>Your project, our craft.</h2>
+        <p>Have something in mind? Let's plant the seed and grow it into something unforgettable.</p>
+        <a href="contact.html" class="cta-button" data-cursor="SAY HI">Start a Project</a>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Studio</h3>
+          <p>Hide and Seeds Production is an award-winning CG studio creating cinematic experiences that blend creativity with technology.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <div class="footer-links">
+            <a href="projects.html">Projects</a>
+            <a href="services.html">Services</a>
+            <a href="team.html">Team</a>
+            <a href="careers.html">Careers</a>
+            <a href="news.html">News</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>Contact</h3>
+          <p>Email: <a href="mailto:hello@hideandseeds.com" style="color:#FFD700;text-decoration:none;">hello@hideandseeds.com</a></p>
+          <p>Bandar Puteri Puchong, 47100 Puchong, Selangor, Malaysia</p>
+          <div class="footer-links" style="margin-top: 15px;">
+            <a href="https://facebook.com/hideandseeds" target="_blank" rel="noopener">Facebook</a>
+            <a href="https://linkedin.com/company/hide-and-seeds/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://youtube.com/channel/UCpOwu_qczLWLpKOR0KmR1_w" target="_blank" rel="noopener">YouTube</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Hide and Seeds Production. All Rights Reserved.</p>
+        <p>Crafted with creativity &amp; technology</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

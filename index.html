@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hide and Seeds — Cinematic CG Studio</title>
+  <meta name="description" content="Hide and Seeds is an award-winning CG studio in Puchong, Malaysia creating cinematic commercials, animation, VFX and game art. We blend creativity with technology.">
+  <meta name="theme-color" content="#05060f">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://hideandseeds.com/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Hide and Seeds — Cinematic CG Studio">
+  <meta property="og:description" content="Award-winning CG studio. We blend creativity with technology.">
+  <meta property="og:url" content="https://hideandseeds.com/">
+  <meta property="og:image" content="assets/studio-01.png">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- SVG filters: ink-splatter edges + liquid refraction lens -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <filter id="ink-edge" x="-25%" y="-25%" width="150%" height="150%" color-interpolation-filters="sRGB">
+        <feTurbulence type="fractalNoise" baseFrequency="0.014 0.019" numOctaves="4" seed="7" result="n"/>
+        <feDisplacementMap in="SourceAlpha" in2="n" scale="42" xChannelSelector="R" yChannelSelector="G" result="ra"/>
+        <feComposite in="SourceGraphic" in2="ra" operator="in"/>
+      </filter>
+      <filter id="ink-edge-soft" x="-25%" y="-25%" width="150%" height="150%" color-interpolation-filters="sRGB">
+        <feTurbulence type="fractalNoise" baseFrequency="0.011 0.016" numOctaves="4" seed="3" result="n"/>
+        <feDisplacementMap in="SourceAlpha" in2="n" scale="30" xChannelSelector="R" yChannelSelector="G" result="ra"/>
+        <feComposite in="SourceGraphic" in2="ra" operator="in"/>
+      </filter>
+      <filter id="liquid-warp" x="-50%" y="-50%" width="200%" height="200%" color-interpolation-filters="sRGB">
+        <feTurbulence type="fractalNoise" baseFrequency="0.006 0.009" numOctaves="3" seed="5" result="n1">
+          <animate attributeName="baseFrequency" dur="12s" values="0.006 0.009; 0.010 0.006; 0.006 0.009" repeatCount="indefinite"/>
+        </feTurbulence>
+        <feDisplacementMap in="SourceGraphic" in2="n1" scale="22" xChannelSelector="R" yChannelSelector="G" result="d1"/>
+        <feTurbulence type="fractalNoise" baseFrequency="0.018 0.022" numOctaves="2" seed="11" result="n2"/>
+        <feDisplacementMap in="d1" in2="n2" scale="8" xChannelSelector="G" yChannelSelector="B"/>
+      </filter>
+    </defs>
+  </svg>
+
+  <canvas id="shader-canvas"></canvas>
+
+  <div id="ring-cursor" aria-hidden="true">
+    <span class="rc-ring"></span>
+    <span class="rc-mark"></span>
+    <span class="rc-label"></span>
+  </div>
+
+  <div class="content-wrapper">
+    <!-- Navigation -->
+    <nav>
+      <a href="index.html" class="logo">Hide &amp; Seeds</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Hero -->
+    <div class="hero-scroll">
+      <section class="hero">
+        <div class="hero-video-wrap">
+          <video class="hero-video" autoplay muted loop playsinline preload="auto">
+            <source src="uploads/HnS_Demoreel_2025_Website.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <h1>Hide &amp; Seeds</h1>
+          <p class="subtitle">Blend Creativity with Technology</p>
+          <a href="projects.html" class="hero-cta" data-cursor="EXPLORE">View Our Work</a>
+        </div>
+        <p class="scroll-hint">Scroll to explore</p>
+      </section>
+    </div>
+
+    <!-- About -->
+    <section id="about" class="about-section">
+      <div class="about-grid">
+        <div class="about-content">
+          <h2 class="reveal reveal-left">Award-Winning CG Studio</h2>
+          <p class="reveal reveal-left reveal-d1">At Hide and Seeds Production, we are an award-winning CG studio dedicated to creating cinematic commercials, animations, and visual effects that push creative boundaries.</p>
+          <p class="reveal reveal-left reveal-d2">Our name embodies the playful spirit of "hide and seek" and the growth potential of "seeds." Every project is a seed we nurture into something extraordinary.</p>
+          <p class="reveal reveal-left reveal-d3">We foster a supportive environment where creativity thrives, and every team member can hone their craft and grow together.</p>
+        </div>
+        <div class="about-image reveal reveal-right reveal-d2"><img src="assets/studio-01.png" alt="Hide and Seeds studio space"></div>
+      </div>
+    </section>
+
+    <!-- Featured Projects with ink reveals -->
+    <section id="projects" class="project-section">
+      <div class="project-scroll">
+        <div class="project-sticky" data-cursor="EXPLORE">
+          <div class="project-video-wrap">
+            <video class="project-video" autoplay muted loop playsinline>
+              <source src="uploads/Services_Commercial.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="project-vignette"></div>
+          <div class="project-content">
+            <h2>Commercial Production</h2>
+            <div class="project-tags">
+              <span class="project-tag">CG</span>
+              <span class="project-tag">Commercial</span>
+            </div>
+            <p>Full-service commercial production from concept to final delivery. We create compelling visual narratives that drive brand engagement at the highest level.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-scroll">
+        <div class="project-sticky" data-cursor="EXPLORE">
+          <div class="project-video-wrap">
+            <video class="project-video" autoplay muted loop playsinline>
+              <source src="uploads/Services_Cinematic.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="project-vignette"></div>
+          <div class="project-content">
+            <h2>Cinematic Production</h2>
+            <div class="project-tags">
+              <span class="project-tag">VFX</span>
+              <span class="project-tag">Cinematic</span>
+            </div>
+            <p>High-impact visual effects for film and television. Seamless integration of practical and digital elements pushing creative boundaries.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-scroll">
+        <div class="project-sticky" data-cursor="EXPLORE">
+          <div class="project-video-wrap">
+            <video class="project-video" autoplay muted loop playsinline>
+              <source src="uploads/Services_GameArt.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="project-vignette"></div>
+          <div class="project-content">
+            <h2>Game Art &amp; Design</h2>
+            <div class="project-tags">
+              <span class="project-tag">3D</span>
+              <span class="project-tag">Game Development</span>
+            </div>
+            <p>Cutting-edge 3D modeling and character design for interactive media. Technical precision combined with creative vision.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cta-block">
+        <a href="projects.html" class="cta-button" data-cursor="SEE ALL">View All Projects</a>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="services-section">
+      <div class="section-container">
+        <h2 class="services-title reveal">Our Services</h2>
+        <div class="services-grid">
+          <div class="service-card reveal reveal-d1">
+            <h3>Commercial Production</h3>
+            <p>From concept to delivery, we handle every aspect of commercial production with creativity and precision.</p>
+          </div>
+          <div class="service-card reveal reveal-d1">
+            <h3>3D Animation</h3>
+            <p>Character animation, motion graphics, and 3D modeling that bring stories to life with technical excellence.</p>
+          </div>
+          <div class="service-card reveal reveal-d2">
+            <h3>Visual Effects</h3>
+            <p>Cutting-edge VFX that seamlessly integrate practical and digital elements for stunning results.</p>
+          </div>
+          <div class="service-card reveal reveal-d2">
+            <h3>Motion Design</h3>
+            <p>Dynamic motion graphics and titles that elevate your visual storytelling with precision and creativity.</p>
+          </div>
+          <div class="service-card reveal reveal-d3">
+            <h3>Post-Production</h3>
+            <p>Comprehensive post services including color grading, sound design, and mastering for broadcast quality.</p>
+          </div>
+          <div class="service-card reveal reveal-d3">
+            <h3>Creative Consultation</h3>
+            <p>Strategic creative direction from ideation through execution ensuring your vision is perfectly realized.</p>
+          </div>
+        </div>
+        <div style="text-align:center; margin-top:50px;">
+          <a href="services.html" class="cta-button" data-cursor="MORE">Explore Services</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Clients -->
+    <section id="clients" class="clients-section">
+      <div class="section-container">
+        <h2 class="clients-title reveal">Our Clients</h2>
+        <p class="clients-subtitle reveal reveal-d1">Trusted by studios and brands we're proud to create alongside</p>
+        <div class="clients-grid">
+          <div class="client-logo"><img src="assets/clients/logo01.png" alt="Client logo" loading="lazy"></div>
+          <div class="client-logo"><img src="assets/clients/logo02.png" alt="Client logo" loading="lazy"></div>
+          <div class="client-logo"><img src="assets/clients/logo03.png" alt="Client logo" loading="lazy"></div>
+          <div class="client-logo"><img src="assets/clients/logo04.png" alt="Client logo" loading="lazy"></div>
+          <div class="client-logo"><img src="assets/clients/logo05.png" alt="Client logo" loading="lazy"></div>
+          <div class="client-logo"><img src="assets/clients/logo06.png" alt="Client logo" loading="lazy"></div>
+          <div class="client-logo"><img src="assets/clients/logo07.png" alt="Client logo" loading="lazy"></div>
+          <div class="client-logo"><img src="assets/clients/logo08.png" alt="Client logo" loading="lazy"></div>
+          <div class="client-logo"><img src="assets/clients/logo09.png" alt="Client logo" loading="lazy"></div>
+          <div class="client-logo"><img src="assets/clients/logo010.png" alt="Client logo" loading="lazy"></div>
+          <div class="client-logo"><img src="assets/clients/logo011.png" alt="Client logo" loading="lazy"></div>
+          <div class="client-logo"><img src="assets/clients/logo012.png" alt="Client logo" loading="lazy"></div>
+          <div class="client-logo"><img src="assets/clients/logo013.png" alt="Client logo" loading="lazy"></div>
+          <div class="client-logo"><img src="assets/clients/logo014.png" alt="Client logo" loading="lazy"></div>
+          <div class="client-logo"><img src="assets/clients/logo015.png" alt="Client logo" loading="lazy"></div>
+          <div class="client-logo"><img src="assets/clients/logo016.png" alt="Client logo" loading="lazy"></div>
+          <div class="client-logo"><img src="assets/clients/logo017.png" alt="Client logo" loading="lazy"></div>
+        </div>
+
+        <div class="cta-block">
+          <h2 class="cta-headline">Have a project in mind?</h2>
+          <p class="cta-sub">Let's blend creativity with technology and bring your vision to life.</p>
+          <a href="contact.html" class="cta-button" data-cursor="SAY HI">Start a Project</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact-footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Studio</h3>
+          <p>Hide and Seeds Production is an award-winning CG studio creating cinematic experiences that blend creativity with technology.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <div class="footer-links">
+            <a href="projects.html">Projects</a>
+            <a href="services.html">Services</a>
+            <a href="team.html">Team</a>
+            <a href="careers.html">Careers</a>
+            <a href="news.html">News</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>Contact</h3>
+          <p>Email: <a href="mailto:hello@hideandseeds.com" style="color:#FFD700;text-decoration:none;">hello@hideandseeds.com</a></p>
+          <p>Bandar Puteri Puchong, 47100 Puchong, Selangor, Malaysia</p>
+          <div class="footer-links" style="margin-top: 15px;">
+            <a href="https://facebook.com/hideandseeds" target="_blank" rel="noopener">Facebook</a>
+            <a href="https://linkedin.com/company/hide-and-seeds/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://youtube.com/channel/UCpOwu_qczLWLpKOR0KmR1_w" target="_blank" rel="noopener">YouTube</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Hide and Seeds Production. All Rights Reserved.</p>
+        <p>Crafted with creativity &amp; technology</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

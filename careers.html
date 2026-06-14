@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Careers — Hide and Seeds</title>
+  <meta name="description" content="Join Hide and Seeds. Open roles in animation, VFX, 3D and more at our award-winning CG studio in Puchong, Malaysia.">
+  <meta name="theme-color" content="#05060f">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <filter id="ink-edge" x="-25%" y="-25%" width="150%" height="150%" color-interpolation-filters="sRGB">
+        <feTurbulence type="fractalNoise" baseFrequency="0.014 0.019" numOctaves="4" seed="7" result="n"/>
+        <feDisplacementMap in="SourceAlpha" in2="n" scale="42" xChannelSelector="R" yChannelSelector="G" result="ra"/>
+        <feComposite in="SourceGraphic" in2="ra" operator="in"/>
+      </filter>
+      <filter id="ink-edge-soft" x="-25%" y="-25%" width="150%" height="150%" color-interpolation-filters="sRGB">
+        <feTurbulence type="fractalNoise" baseFrequency="0.011 0.016" numOctaves="4" seed="3" result="n"/>
+        <feDisplacementMap in="SourceAlpha" in2="n" scale="30" xChannelSelector="R" yChannelSelector="G" result="ra"/>
+        <feComposite in="SourceGraphic" in2="ra" operator="in"/>
+      </filter>
+      <filter id="liquid-warp" x="-50%" y="-50%" width="200%" height="200%" color-interpolation-filters="sRGB">
+        <feTurbulence type="fractalNoise" baseFrequency="0.006 0.009" numOctaves="3" seed="5" result="n1">
+          <animate attributeName="baseFrequency" dur="12s" values="0.006 0.009; 0.010 0.006; 0.006 0.009" repeatCount="indefinite"/>
+        </feTurbulence>
+        <feDisplacementMap in="SourceGraphic" in2="n1" scale="22" xChannelSelector="R" yChannelSelector="G" result="d1"/>
+        <feTurbulence type="fractalNoise" baseFrequency="0.018 0.022" numOctaves="2" seed="11" result="n2"/>
+        <feDisplacementMap in="d1" in2="n2" scale="8" xChannelSelector="G" yChannelSelector="B"/>
+      </filter>
+    </defs>
+  </svg>
+
+  <canvas id="shader-canvas"></canvas>
+  <div id="ring-cursor" aria-hidden="true"><span class="rc-ring"></span><span class="rc-mark"></span><span class="rc-label"></span></div>
+
+  <div class="content-wrapper">
+    <nav>
+      <a href="index.html" class="logo">Hide &amp; Seeds</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="careers.html" class="active">Careers</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <header class="page-hero">
+      <span class="eyebrow">Join the Studio</span>
+      <h1>Grow Your Craft With Us</h1>
+      <p>We're an award-winning CG studio that treats talent like seeds — give it good soil and it grows. If you love cinematic work and getting better every day, let's talk.</p>
+    </header>
+
+    <section class="page-section">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>Why Hide and Seeds</h2>
+          <p>More than a job — a place to do the best work of your career.</p>
+        </div>
+        <div class="perks-grid">
+          <div class="perk reveal"><h4>Real Mentorship</h4><p>Work directly with leads who want to see you grow, not just ship shots.</p></div>
+          <div class="perk reveal reveal-d1"><h4>Ambitious Work</h4><p>Commercials, cinematics and original IP — variety that keeps the craft sharp.</p></div>
+          <div class="perk reveal reveal-d2"><h4>Creative Freedom</h4><p>Your ideas count. We make room to experiment and play.</p></div>
+          <div class="perk reveal"><h4>Modern Pipeline</h4><p>A studio built on solid tools and workflows so artists can focus on art.</p></div>
+          <div class="perk reveal reveal-d1"><h4>Supportive Culture</h4><p>Kind, collaborative people who lift each other up.</p></div>
+          <div class="perk reveal reveal-d2"><h4>Growth Path</h4><p>Clear ways to level up from junior to lead as you develop.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>Open Roles</h2>
+          <p>Don't see your exact role? Send us your reel anyway — we love meeting great people.</p>
+        </div>
+        <div class="jobs-list">
+          <div class="job-card reveal">
+            <div><h3>Senior 3D Animator</h3><div class="job-meta">Full-time · Puchong / Hybrid · Animation</div></div>
+            <a class="job-apply" href="mailto:hello@hideandseeds.com?subject=Application%3A%20Senior%203D%20Animator" data-cursor="APPLY">Apply</a>
+          </div>
+          <div class="job-card reveal reveal-d1">
+            <div><h3>VFX / Compositing Artist</h3><div class="job-meta">Full-time · Puchong / Hybrid · VFX</div></div>
+            <a class="job-apply" href="mailto:hello@hideandseeds.com?subject=Application%3A%20VFX%20Compositing%20Artist" data-cursor="APPLY">Apply</a>
+          </div>
+          <div class="job-card reveal reveal-d2">
+            <div><h3>3D Generalist</h3><div class="job-meta">Full-time · Puchong · Production</div></div>
+            <a class="job-apply" href="mailto:hello@hideandseeds.com?subject=Application%3A%203D%20Generalist" data-cursor="APPLY">Apply</a>
+          </div>
+          <div class="job-card reveal">
+            <div><h3>Lighting &amp; Rendering Artist</h3><div class="job-meta">Full-time · Puchong / Hybrid · Lighting</div></div>
+            <a class="job-apply" href="mailto:hello@hideandseeds.com?subject=Application%3A%20Lighting%20%26%20Rendering%20Artist" data-cursor="APPLY">Apply</a>
+          </div>
+          <div class="job-card reveal reveal-d1">
+            <div><h3>Motion Designer</h3><div class="job-meta">Full-time · Puchong / Hybrid · Motion</div></div>
+            <a class="job-apply" href="mailto:hello@hideandseeds.com?subject=Application%3A%20Motion%20Designer" data-cursor="APPLY">Apply</a>
+          </div>
+          <div class="job-card reveal reveal-d2">
+            <div><h3>Internship — CG &amp; Animation</h3><div class="job-meta">Internship · Puchong · Multiple disciplines</div></div>
+            <a class="job-apply" href="mailto:hello@hideandseeds.com?subject=Application%3A%20Internship" data-cursor="APPLY">Apply</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="inline-cta">
+        <h2>Plant your career here.</h2>
+        <p>Send your CV, reel and a hello to <a href="mailto:hello@hideandseeds.com" style="color:#FFD700;text-decoration:none;">hello@hideandseeds.com</a>.</p>
+        <a href="mailto:hello@hideandseeds.com?subject=Joining%20Hide%20and%20Seeds" class="cta-button" data-cursor="SAY HI">Send Your Reel</a>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Studio</h3>
+          <p>Hide and Seeds Production is an award-winning CG studio creating cinematic experiences that blend creativity with technology.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <div class="footer-links">
+            <a href="projects.html">Projects</a>
+            <a href="services.html">Services</a>
+            <a href="team.html">Team</a>
+            <a href="careers.html">Careers</a>
+            <a href="news.html">News</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>Contact</h3>
+          <p>Email: <a href="mailto:hello@hideandseeds.com" style="color:#FFD700;text-decoration:none;">hello@hideandseeds.com</a></p>
+          <p>Bandar Puteri Puchong, 47100 Puchong, Selangor, Malaysia</p>
+          <div class="footer-links" style="margin-top: 15px;">
+            <a href="https://facebook.com/hideandseeds" target="_blank" rel="noopener">Facebook</a>
+            <a href="https://linkedin.com/company/hide-and-seeds/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://youtube.com/channel/UCpOwu_qczLWLpKOR0KmR1_w" target="_blank" rel="noopener">YouTube</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Hide and Seeds Production. All Rights Reserved.</p>
+        <p>Crafted with creativity &amp; technology</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

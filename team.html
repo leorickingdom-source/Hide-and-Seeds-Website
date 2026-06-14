@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team — Hide and Seeds</title>
+  <meta name="description" content="Meet the studio behind Hide and Seeds — a tight-knit crew of artists and technicians who blend creativity with technology.">
+  <meta name="theme-color" content="#05060f">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <filter id="ink-edge" x="-25%" y="-25%" width="150%" height="150%" color-interpolation-filters="sRGB">
+        <feTurbulence type="fractalNoise" baseFrequency="0.014 0.019" numOctaves="4" seed="7" result="n"/>
+        <feDisplacementMap in="SourceAlpha" in2="n" scale="42" xChannelSelector="R" yChannelSelector="G" result="ra"/>
+        <feComposite in="SourceGraphic" in2="ra" operator="in"/>
+      </filter>
+      <filter id="ink-edge-soft" x="-25%" y="-25%" width="150%" height="150%" color-interpolation-filters="sRGB">
+        <feTurbulence type="fractalNoise" baseFrequency="0.011 0.016" numOctaves="4" seed="3" result="n"/>
+        <feDisplacementMap in="SourceAlpha" in2="n" scale="30" xChannelSelector="R" yChannelSelector="G" result="ra"/>
+        <feComposite in="SourceGraphic" in2="ra" operator="in"/>
+      </filter>
+      <filter id="liquid-warp" x="-50%" y="-50%" width="200%" height="200%" color-interpolation-filters="sRGB">
+        <feTurbulence type="fractalNoise" baseFrequency="0.006 0.009" numOctaves="3" seed="5" result="n1">
+          <animate attributeName="baseFrequency" dur="12s" values="0.006 0.009; 0.010 0.006; 0.006 0.009" repeatCount="indefinite"/>
+        </feTurbulence>
+        <feDisplacementMap in="SourceGraphic" in2="n1" scale="22" xChannelSelector="R" yChannelSelector="G" result="d1"/>
+        <feTurbulence type="fractalNoise" baseFrequency="0.018 0.022" numOctaves="2" seed="11" result="n2"/>
+        <feDisplacementMap in="d1" in2="n2" scale="8" xChannelSelector="G" yChannelSelector="B"/>
+      </filter>
+    </defs>
+  </svg>
+
+  <canvas id="shader-canvas"></canvas>
+  <div id="ring-cursor" aria-hidden="true"><span class="rc-ring"></span><span class="rc-mark"></span><span class="rc-label"></span></div>
+
+  <div class="content-wrapper">
+    <nav>
+      <a href="index.html" class="logo">Hide &amp; Seeds</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="team.html" class="active">Team</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <header class="page-hero">
+      <span class="eyebrow">Who We Are</span>
+      <h1>The People Behind the Pixels</h1>
+      <p>We're a tight-knit crew of artists and technicians who believe the best work grows in a place where creativity is nurtured and everyone keeps learning.</p>
+    </header>
+
+    <section class="about-section">
+      <div class="about-grid">
+        <div class="about-content">
+          <h2 class="reveal reveal-left">A studio built like a garden</h2>
+          <p class="reveal reveal-left reveal-d1">Our name says it: a little "hide and seek," a lot of "seeds." We give ideas — and people — room to grow. Junior artists work shoulder to shoulder with leads, and every project is a chance to sharpen the craft.</p>
+          <p class="reveal reveal-left reveal-d2">From our home base in Puchong, Malaysia, we collaborate across animation, VFX, game art and post to deliver cinematic work for brands and studios around the region and beyond.</p>
+        </div>
+        <div class="about-image reveal reveal-right reveal-d2"><img src="assets/studio-02.png" alt="Inside the Hide and Seeds studio"></div>
+      </div>
+    </section>
+
+    <section class="page-section">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>What We Stand For</h2>
+          <p>The values that shape how we create and how we treat each other.</p>
+        </div>
+        <div class="value-grid">
+          <div class="value-card reveal"><h3>Grow Together</h3><p>A supportive environment where every team member can hone their craft, take creative risks and rise.</p></div>
+          <div class="value-card reveal reveal-d1"><h3>Craft First</h3><p>We sweat the details others skip. Technical precision in service of genuine emotion and story.</p></div>
+          <div class="value-card reveal reveal-d2"><h3>Play &amp; Discover</h3><p>The "hide and seek" spirit — curiosity, experimentation and a little joy in everything we make.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>Our Crew</h2>
+          <p>One studio, many disciplines — working side by side from seed to screen.</p>
+        </div>
+        <div class="team-grid">
+          <div class="team-card reveal"><div class="team-photo"><span>DIR</span></div><h4>Creative Direction</h4><div class="role">Vision &amp; Story</div></div>
+          <div class="team-card reveal reveal-d1"><div class="team-photo"><span>ANI</span></div><h4>Animation</h4><div class="role">Character &amp; Motion</div></div>
+          <div class="team-card reveal reveal-d2"><div class="team-photo"><span>MOD</span></div><h4>Modeling &amp; Lookdev</h4><div class="role">Assets &amp; Worlds</div></div>
+          <div class="team-card reveal reveal-d3"><div class="team-photo"><span>VFX</span></div><h4>Visual Effects</h4><div class="role">FX &amp; Compositing</div></div>
+          <div class="team-card reveal"><div class="team-photo"><span>LGT</span></div><h4>Lighting &amp; Render</h4><div class="role">Mood &amp; Finish</div></div>
+          <div class="team-card reveal reveal-d1"><div class="team-photo"><span>MOG</span></div><h4>Motion Design</h4><div class="role">Graphics &amp; Titles</div></div>
+          <div class="team-card reveal reveal-d2"><div class="team-photo"><span>PIP</span></div><h4>Pipeline &amp; Tech</h4><div class="role">Tools &amp; Workflow</div></div>
+          <div class="team-card reveal reveal-d3"><div class="team-photo"><span>PRD</span></div><h4>Production</h4><div class="role">Planning &amp; Delivery</div></div>
+        </div>
+      </div>
+
+      <div class="inline-cta">
+        <h2>Want to grow with us?</h2>
+        <p>We're always looking for curious, kind, talented people to join the studio.</p>
+        <a href="careers.html" class="cta-button" data-cursor="JOIN US">See Open Roles</a>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Studio</h3>
+          <p>Hide and Seeds Production is an award-winning CG studio creating cinematic experiences that blend creativity with technology.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <div class="footer-links">
+            <a href="projects.html">Projects</a>
+            <a href="services.html">Services</a>
+            <a href="team.html">Team</a>
+            <a href="careers.html">Careers</a>
+            <a href="news.html">News</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>Contact</h3>
+          <p>Email: <a href="mailto:hello@hideandseeds.com" style="color:#FFD700;text-decoration:none;">hello@hideandseeds.com</a></p>
+          <p>Bandar Puteri Puchong, 47100 Puchong, Selangor, Malaysia</p>
+          <div class="footer-links" style="margin-top: 15px;">
+            <a href="https://facebook.com/hideandseeds" target="_blank" rel="noopener">Facebook</a>
+            <a href="https://linkedin.com/company/hide-and-seeds/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://youtube.com/channel/UCpOwu_qczLWLpKOR0KmR1_w" target="_blank" rel="noopener">YouTube</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Hide and Seeds Production. All Rights Reserved.</p>
+        <p>Crafted with creativity &amp; technology</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
